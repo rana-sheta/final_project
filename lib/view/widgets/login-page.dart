@@ -1,4 +1,4 @@
-import 'dart:html';
+//import 'dart:html';
 
 import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -33,8 +33,10 @@ class _loginState extends State<login> {
             child: Column(
               children: [
                 Center(
-                 child: Image.asset("lock.jpg",width: 220
-                   ,alignment: Alignment.centerLeft,),
+                    child:Image(image: AssetImage("assets/lock.jpg")
+                    ),
+                 // child: Image.asset("lock.jpg",width: 220
+                 //   ,alignment: Alignment.centerLeft,),
 
                  // child:CircleAvatar(
                  //   radius: 120,
