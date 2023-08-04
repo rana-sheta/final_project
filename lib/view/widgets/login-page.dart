@@ -26,7 +26,14 @@ class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Center(
+          child: SizedBox(height: 80,
+              width: 150,
+              child: Image(image: AssetImage('assets/text.png'),)),
+        ),
+      ),
       body:Form   (
         key: formKey,
         child: SingleChildScrollView(
@@ -34,15 +41,15 @@ class _loginState extends State<login> {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                const Center(
-                    child:Image(image: AssetImage("assets/lock.jpg")
-                    ),
-               ),
+                 SizedBox(height: 150,width: 150,
+                   child: Image(image: AssetImage("assets/logoo.png"),
+                   ),
+                 ),
                 SizedBox(height: 20,),
-                  const Text("Welcome Back",style: TextStyle(fontSize: 45
+                  const Text("Welcome Back",style: TextStyle(fontSize: 36,fontWeight: FontWeight.bold
                   )),
                // SizedBox(height: 1,),
-                  const Text("Login to continuo using the app",style: TextStyle(color: Colors.blueGrey),) ,
+                Text("Login to continue using the app",style: TextStyle(color: Colors.grey.shade700),) ,
                 SizedBox(height: 30,),
                 TextFormField(
                   controller: emailControler,
@@ -56,7 +63,7 @@ class _loginState extends State<login> {
                   ),
 
                 ),
-                SizedBox(height: 25,),
+                SizedBox(height: 15,),
                 TextFormField(
                   obscureText: _passVisible,
                     controller:passwordControler,
@@ -77,16 +84,17 @@ class _loginState extends State<login> {
                       ),
                     ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(left: 200,top: 10),
-                  child: Text("Forget your password?"),
+                  child: Text("Forget your password?",style: TextStyle(color: Colors.grey.shade700),),
                 ),
-                SizedBox(height: 30,),
+                SizedBox(height: 60,),
 
                 ElevatedButton(
                      style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(horizontal: 83,vertical: 17),
-                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0),),
+                       backgroundColor: Colors.black87,
+                        padding: EdgeInsets.symmetric(horizontal: 83,vertical: 14),
+                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(17.0),),
                     ),
                     onPressed: () async {
                       if(formKey.currentState!.validate()){
@@ -106,25 +114,26 @@ class _loginState extends State<login> {
                         }
                       }
                     },
-                    child: Text( "Log in",style: TextStyle(fontStyle: FontStyle.italic,fontSize: 28),)
+                    child: Text( "Log in",style: TextStyle( fontSize: 24),)
                 ),
-
-                Container(
-                    margin: EdgeInsets.only(left: 78,top: 17),
-                    child:Row(
-                      children: [
-                        Text("Don't have an account? ",style: TextStyle(color: Colors.grey),),
-                        InkWell(
-                          child:Text("Register",style: TextStyle(color: Colors.blue,fontSize: 17)) ,
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                                signup(),
-                            ),
-                            );
-                          },
-                        )
-                      ],
-                    )),
+                SizedBox(
+                  height: 25,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Don't have an account? ",style: TextStyle(color: Colors.grey.shade700,fontSize: 16),),
+                    InkWell(
+                      child:Text("Register",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black87,fontSize: 16)) ,
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>
+                            signup(),
+                        ),
+                        );
+                      },
+                    )
+                  ],
+                ),
               ],
 
             ),
