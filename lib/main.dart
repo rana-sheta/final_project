@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 //import 'package:google_fonts/google_fonts.dart';
 import 'package:project/view/widgets/login-page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:project/view/widgets/onboarding.dart';
 import 'firebase_options.dart';
 
 
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget{
       // theme: ThemeData(
       // //   fontFamily: GoogleFonts.lato().fontFamily,
       // // ),
-      home:login(),
+      home:onboarding_screen(),
+      //login(),
 
     );
   }

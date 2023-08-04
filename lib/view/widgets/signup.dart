@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class signup extends StatefulWidget {
   const signup({super.key});
@@ -10,6 +11,8 @@ class signup extends StatefulWidget {
 class _signupState extends State<signup> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(),
+    );
   }
 }
