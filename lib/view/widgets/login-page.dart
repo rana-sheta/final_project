@@ -52,7 +52,7 @@ class _loginState extends State<login> {
                   ),),),
                // SizedBox(height: 1,),
                 Text("Login to continue using the app",style:  GoogleFonts.aladin(textStyle:
-                TextStyle(color: Colors.black38,fontSize:20),) ,),
+                TextStyle(color: Colors.grey.shade700,fontSize:20),) ,),
                 SizedBox(height: 30,),
                 TextFormField(
                   controller: emailControler,
@@ -66,7 +66,7 @@ class _loginState extends State<login> {
                         borderRadius: BorderRadius.circular(17)
                     ),
 
-                      prefixIcon: Icon(Icons.person,color: Color.fromARGB(255, 102, 53, 23),),
+                      prefixIcon: Icon(Icons.email,color: Color.fromARGB(255, 102, 53, 23),),
                     border: OutlineInputBorder(
                         borderRadius : BorderRadius.all(Radius.circular(17.0))
                     ),
@@ -104,9 +104,9 @@ class _loginState extends State<login> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 200,top: 15),
-                  child: Text("Forget your password?",style: TextStyle(color: Colors.black38),),
+                  child: Text("Forget your password?",style: TextStyle(color: Colors.grey.shade700),),
                 ),
-                SizedBox(height: 60,),
+                SizedBox(height: 70,),
 
                 ElevatedButton(
                      style: ElevatedButton.styleFrom(
@@ -115,36 +115,39 @@ class _loginState extends State<login> {
                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(17.0),),
                     ),
                     onPressed: () async {
-                      if(formKey.currentState!.validate()){
+                      // if(formKey.currentState!.validate()){
                         bool result=await firebaseLogin(emailControler.text, passwordControler.text);
                         if(result) {
-                          final SharedPreferences prefs = await SharedPreferences
-                              .getInstance();
-                          await prefs.setString('email', emailControler.text);
-
+                          // final SharedPreferences prefs = await SharedPreferences
+                          //     .getInstance();
+                          // await prefs.setString('email', emailControler.text);
                           Navigator.push(context, MaterialPageRoute(
                             builder: (context) =>
                                 after_login(),),);
                         }
                         else{
                           ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text("login faild",style: TextStyle(fontSize: 20),)));
+                              const SnackBar(content: Text("Login Failed",style: TextStyle(fontSize: 20),)));
                         }
-                      }
+                      // }
                     },
                     child: Text( "Log in",style: GoogleFonts.aladin(textStyle:
                     TextStyle( fontSize: 28),)),
                 ),
                 SizedBox(
-                  height: 25,
+                  height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Don't have an account? ",style: TextStyle(color: Colors.black38,fontSize: 16),),
+                    Text("Don't have an account? ",style: TextStyle(color: Colors.grey.shade700,fontSize: 16),),
+                    SizedBox(
+                      width: 5,
+                    ),
                     InkWell(
-                      child:Text("Register",style: GoogleFonts.aladin(textStyle:
-                      TextStyle(color: Color.fromARGB(255, 102, 53, 23),fontSize: 20))) ,
+                      child:
+                      Text("Register",style: GoogleFonts.aladin(textStyle:
+                      TextStyle(color: Color.fromARGB(255, 102, 53, 23),fontSize: 20,fontWeight: FontWeight.bold))) ,
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>
                             signup(),

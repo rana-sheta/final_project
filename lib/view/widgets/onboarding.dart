@@ -22,12 +22,11 @@ class _onboarding_screenState extends State<onboarding_screen> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Padding(
-          padding: const EdgeInsets.only(top: 30,left: 60),
+        body: Center(
           child: Column(
            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(height: 60,),
+              const SizedBox(height: 60,),
                   Text("PLANET",style: GoogleFonts.aladin(textStyle:
                 TextStyle(fontSize: 60,color: Colors.black,letterSpacing: 6
               ),),),
@@ -38,7 +37,7 @@ class _onboarding_screenState extends State<onboarding_screen> {
                ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 102, 53, 23),
-                        padding: EdgeInsets.symmetric(horizontal: 100,vertical: 17),
+                        padding: EdgeInsets.symmetric(horizontal: 83,vertical: 14),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0),),
                       ),
                       onPressed: () {
@@ -46,7 +45,7 @@ class _onboarding_screenState extends State<onboarding_screen> {
                           builder: (context) =>
                               login(),),);
                       }, child: Text( "Start",style: GoogleFonts.aladin(textStyle:
-                      TextStyle(fontSize: 32,letterSpacing: 2),),),
+                      TextStyle(fontSize: 28,letterSpacing: 2),),),
 
                         ),
             ],
