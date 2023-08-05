@@ -1,7 +1,9 @@
 //import 'dart:html';
 
+
 import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:project/view/widgets/signup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
@@ -26,14 +28,6 @@ class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Center(
-          child: SizedBox(height: 80,
-              width: 150,
-              child: Image(image: AssetImage('assets/text.png'),)),
-        ),
-      ),
       body:Form   (
         key: formKey,
         child: SingleChildScrollView(
@@ -41,15 +35,24 @@ class _loginState extends State<login> {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
+                SizedBox(height: 20,),
+                Text("PLANET",style: GoogleFonts.aladin(textStyle:
+                TextStyle(fontSize: 38,color: Colors.black,letterSpacing: 6
+                ),),),
+                Text("S H O E S",style: GoogleFonts.aladin(textStyle:
+                TextStyle(fontSize: 20,color: Colors.black,letterSpacing: 3,height: 1,fontWeight: FontWeight.bold
+                ),),),
                  SizedBox(height: 150,width: 150,
                    child: Image(image: AssetImage("assets/logoo.png"),
                    ),
                  ),
                 SizedBox(height: 20,),
-                  const Text("Welcome Back",style: TextStyle(fontSize: 36,fontWeight: FontWeight.bold
-                  )),
+                   Text("Welcome Back",style: GoogleFonts.aladin(textStyle:
+                  TextStyle(fontSize: 47
+                  ),),),
                // SizedBox(height: 1,),
-                Text("Login to continue using the app",style: TextStyle(color: Colors.grey.shade700),) ,
+                Text("Login to continue using the app",style:  GoogleFonts.aladin(textStyle:
+                TextStyle(color: Colors.grey.shade700,fontSize:20),) ,),
                 SizedBox(height: 30,),
                 TextFormField(
                   controller: emailControler,
@@ -114,7 +117,8 @@ class _loginState extends State<login> {
                         }
                       }
                     },
-                    child: Text( "Log in",style: TextStyle( fontSize: 24),)
+                    child: Text( "Log in",style: GoogleFonts.aladin(textStyle:
+                    TextStyle( fontSize: 28),)),
                 ),
                 SizedBox(
                   height: 25,
@@ -124,7 +128,8 @@ class _loginState extends State<login> {
                   children: [
                     Text("Don't have an account? ",style: TextStyle(color: Colors.grey.shade700,fontSize: 16),),
                     InkWell(
-                      child:Text("Register",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black87,fontSize: 16)) ,
+                      child:Text("Register",style: GoogleFonts.aladin(textStyle:
+                      TextStyle(color: Colors.black87,fontSize: 20))) ,
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>
                             signup(),

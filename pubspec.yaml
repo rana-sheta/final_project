@@ -41,6 +41,7 @@ dependencies:
   shared_preferences: ^2.2.0
   dio: ^5.3.2
   flutter_bloc: ^8.1.3
+  google_fonts: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -68,7 +69,7 @@ flutter:
   assets:
       - assets/lock.jpg
       - assets/shoes.png
-      - assets/logo2.png
+      - assets/ground.png
       - assets/logoo.png
       - assets/text.png
   #   - images/a_dot_burr.jpeg

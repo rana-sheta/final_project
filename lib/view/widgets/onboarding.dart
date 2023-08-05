@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project/view/widgets/login-page.dart';
+import 'package:project/view/widgets/signup.dart';
 
 class onboarding_screen extends StatefulWidget {
   const onboarding_screen({super.key});
@@ -12,23 +14,49 @@ class _onboarding_screenState extends State<onboarding_screen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(25.0),
-          child: Column(
-            children: [
-              Center(
-                child:Image(image: AssetImage("assets/shoes.png") ,
-              ),
-              ),
-              SizedBox(height: 30,),
-              Text("Every Purchase Will Be Made With Pleasure",style: TextStyle(fontSize: 38,fontStyle: FontStyle.italic),),
-              SizedBox(height: 15,),
-              Text("Buying goods services using the internet"
-              ,style: TextStyle(color: Colors.blueGrey,fontStyle: FontStyle.italic,fontSize:15),),
-            ],
+        child: Stack(
+          children:[ Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(
+
+              children: [
+                Image(image: AssetImage("assets/ground.png") ,fit: BoxFit.fill,height: 833,width: 400,
+                ),
+
+                ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 100,vertical: 17),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0),),
+                ),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) =>
+                        login(),),);
+                }, child: Text( "Login",style: TextStyle(fontStyle: FontStyle.italic,fontSize: 28),),
+
+                  ),
+                SizedBox(height: 30,),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white60,
+                    shadowColor: Colors.black,
+
+                    padding: EdgeInsets.symmetric(horizontal: 90,vertical: 17),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0),),
+                  ),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) =>
+                          signup(),),);
+                  }, child: Text( "Register",style: TextStyle(fontStyle: FontStyle.italic,fontSize: 28,color: Colors.black),),
+
+                ),
+              ],
+            ),
           ),
-        ),
+        ]),
       ),
     );
   }

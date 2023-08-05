@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget{
       // theme: ThemeData(
       // //   fontFamily: GoogleFonts.lato().fontFamily,
       // // ),
-      home:login(),
+      home:onboarding_screen(),
       //login(),
 
     );
