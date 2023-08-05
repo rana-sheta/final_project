@@ -28,11 +28,12 @@ class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     // backgroundColor: Colors.brown,
       body:Form   (
         key: formKey,
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.only(top: 50,left: 20,right: 20),
             child: Column(
               children: [
                 SizedBox(height: 20,),
@@ -52,14 +53,21 @@ class _loginState extends State<login> {
                   ),),),
                // SizedBox(height: 1,),
                 Text("Login to continue using the app",style:  GoogleFonts.aladin(textStyle:
-                TextStyle(color: Colors.grey.shade700,fontSize:20),) ,),
+                TextStyle(color: Colors.black38,fontSize:20),) ,),
                 SizedBox(height: 30,),
                 TextFormField(
                   controller: emailControler,
-                  decoration: const InputDecoration(
+                  decoration:  InputDecoration(
                       labelText:"Email",
+                    labelStyle: TextStyle(color: Color.fromARGB(255, 85,85,85)),
                       hintText: "input your email",
-                      prefixIcon: Icon(Icons.person),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color.fromARGB(255, 102, 53, 23),
+                        ),
+                        borderRadius: BorderRadius.circular(17)
+                    ),
+
+                      prefixIcon: Icon(Icons.person,color: Color.fromARGB(255, 102, 53, 23),),
                     border: OutlineInputBorder(
                         borderRadius : BorderRadius.all(Radius.circular(17.0))
                     ),
@@ -72,30 +80,38 @@ class _loginState extends State<login> {
                     controller:passwordControler,
                     decoration: InputDecoration(
                       labelText:"Password",
+                      //labelStyle: TextStyle(color: Color.fromARGB(255, 102, 53, 23)),
                       hintText: "input your Pass",
-                      prefixIcon: Icon(Icons.lock),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color.fromARGB(255, 102, 53, 23),
+                        ),
+                        borderRadius: BorderRadius.circular(17)
+                      ),
+                      labelStyle: TextStyle(color: Color.fromARGB(255,85,85,85)),
+                      prefixIcon: Icon(Icons.lock,color: Color.fromARGB(255, 102, 53, 23),),
                       suffixIcon: IconButton(
                          onPressed: (){
                            setState(() {
                              _passVisible=!_passVisible;
                            },);},
 
-                          icon: Icon(_passVisible? Icons.visibility_off: Icons.visibility),
+                          icon: Icon(_passVisible? Icons.visibility_off: Icons.visibility),color: Color.fromARGB(255, 102, 53, 23),
                       ),
                       border: const OutlineInputBorder(
                           borderRadius : BorderRadius.all(Radius.circular(17.0)),
+
                       ),
                     ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 200,top: 10),
-                  child: Text("Forget your password?",style: TextStyle(color: Colors.grey.shade700),),
+                  padding: EdgeInsets.only(left: 200,top: 15),
+                  child: Text("Forget your password?",style: TextStyle(color: Colors.black38),),
                 ),
                 SizedBox(height: 60,),
 
                 ElevatedButton(
                      style: ElevatedButton.styleFrom(
-                       backgroundColor: Colors.black87,
+                       backgroundColor: Color.fromARGB(255, 102, 53, 23),
                         padding: EdgeInsets.symmetric(horizontal: 83,vertical: 14),
                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(17.0),),
                     ),
@@ -126,10 +142,10 @@ class _loginState extends State<login> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Don't have an account? ",style: TextStyle(color: Colors.grey.shade700,fontSize: 16),),
+                    Text("Don't have an account? ",style: TextStyle(color: Colors.black38,fontSize: 16),),
                     InkWell(
                       child:Text("Register",style: GoogleFonts.aladin(textStyle:
-                      TextStyle(color: Colors.black87,fontSize: 20))) ,
+                      TextStyle(color: Color.fromARGB(255, 102, 53, 23),fontSize: 20))) ,
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>
                             signup(),

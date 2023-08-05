@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:project/view/widgets/login-page.dart';
 import 'package:project/view/widgets/signup.dart';
 
@@ -13,50 +14,44 @@ class onboarding_screen extends StatefulWidget {
 class _onboarding_screenState extends State<onboarding_screen> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return  Container(constraints: BoxConstraints.expand(),
+      //margin: EdgeInsets.all(value),
+      decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage("assets/Background.png"),fit: BoxFit.cover),
 
-      body: SingleChildScrollView(
-        child: Stack(
-          children:[ Padding(
-            padding: const EdgeInsets.all(25.0),
-            child: Column(
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Padding(
+          padding: const EdgeInsets.only(top: 30,left: 60),
+          child: Column(
+           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(height: 60,),
+                  Text("PLANET",style: GoogleFonts.aladin(textStyle:
+                TextStyle(fontSize: 60,color: Colors.black,letterSpacing: 6
+              ),),),
+                  Text("S H O E S",style: GoogleFonts.aladin(textStyle:
+               TextStyle(fontSize: 30,color: Colors.black,letterSpacing: 3,height: 1,fontWeight: FontWeight.bold
+              ),),),
+               SizedBox(height: 540,),
+               ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 102, 53, 23),
+                        padding: EdgeInsets.symmetric(horizontal: 100,vertical: 17),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0),),
+                      ),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) =>
+                              login(),),);
+                      }, child: Text( "Start",style: GoogleFonts.aladin(textStyle:
+                      TextStyle(fontSize: 32,letterSpacing: 2),),),
 
-              children: [
-                Image(image: AssetImage("assets/ground.png") ,fit: BoxFit.fill,height: 833,width: 400,
-                ),
-
-                ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 100,vertical: 17),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0),),
-                ),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) =>
-                        login(),),);
-                }, child: Text( "Login",style: TextStyle(fontStyle: FontStyle.italic,fontSize: 28),),
-
-                  ),
-                SizedBox(height: 30,),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white60,
-                    shadowColor: Colors.black,
-
-                    padding: EdgeInsets.symmetric(horizontal: 90,vertical: 17),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0),),
-                  ),
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) =>
-                          signup(),),);
-                  }, child: Text( "Register",style: TextStyle(fontStyle: FontStyle.italic,fontSize: 28,color: Colors.black),),
-
-                ),
-              ],
-            ),
+                        ),
+            ],
           ),
-        ]),
+        ),
       ),
     );
   }

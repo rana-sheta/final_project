@@ -21,15 +21,6 @@ class _signupState extends State<signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      // appBar: AppBar(
-      //   backgroundColor: Colors.white,
-      // //   title: Center(
-      // //     child: SizedBox(height: 80,
-      // //         width: 150,
-      // //         child: Image(image: AssetImage('assets/text.png'),)),
-      // //   ),
-      // // ),
       body:SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -52,20 +43,27 @@ class _signupState extends State<signup> {
               ),
 
               SizedBox(height: 20,),
-              Text("Let's Create Yours",style: GoogleFonts.aladin(textStyle:TextStyle(fontSize: 45) ),
+              Text("Let's Create Yours",style: GoogleFonts.aladin(textStyle:TextStyle(fontSize: 45),color: Colors.brown ),
                 //
               ),
               // SizedBox(height: 1,),
-              Text("Enter Your Personal Information",style: GoogleFonts.aladin(textStyle:TextStyle(color: Colors.blueGrey,fontSize: 18), ),
+              Text("Enter Your Personal Information",style: GoogleFonts.aladin(textStyle:TextStyle(color: Colors.black38,fontSize: 18), ),
               ) ,
               SizedBox(height: 30,),
               TextFormField(
-                decoration: const InputDecoration(
+                decoration:  InputDecoration(
                   labelText:"User Name",
+                  labelStyle: TextStyle(color: Color.fromARGB(255,85,85,85)),
                   hintText: "Full name",
-                  prefixIcon: Icon(Icons.person),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color.fromARGB(255, 102, 53, 23),
+                      ),
+                      borderRadius: BorderRadius.circular(17)
+                  ),
+                  prefixIcon: Icon(Icons.person,color: Color.fromARGB(255,85,85,85)),
                   border: OutlineInputBorder(
-                      borderRadius : BorderRadius.all(Radius.circular(20.0))
+                      borderRadius : BorderRadius.all(Radius.circular(20.0)),
+
                   ),
                 ),
 
@@ -73,12 +71,19 @@ class _signupState extends State<signup> {
               SizedBox(height: 25,),
               TextFormField(
                 controller: emailControler,
-                decoration: const InputDecoration(
+                decoration:  InputDecoration(
                   labelText:"Email",
-                  hintText: "Email Address",
-                  prefixIcon: Icon(Icons.person),
+                  labelStyle: TextStyle(color: Color.fromARGB(255,85,85,85)),
+                  hintText: "Enter the email",
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color.fromARGB(255, 102, 53, 23),
+                      ),
+                      borderRadius: BorderRadius.circular(17)
+                  ),
+
+                  prefixIcon: Icon(Icons.person,color: Color.fromARGB(255, 102, 53, 23),),
                   border: OutlineInputBorder(
-                      borderRadius : BorderRadius.all(Radius.circular(20.0))
+                      borderRadius : BorderRadius.all(Radius.circular(17.0))
                   ),
                 ),
 
@@ -89,18 +94,26 @@ class _signupState extends State<signup> {
                 controller:passwordControler,
                 decoration: InputDecoration(
                   labelText:"Password",
-                  hintText: "Creat new pass",
-                  prefixIcon: Icon(Icons.lock),
+
+                  hintText: "Enter your Pass",
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color.fromARGB(255, 102, 53, 23),
+                      ),
+                      borderRadius: BorderRadius.circular(17)
+                  ),
+                  labelStyle: TextStyle(color: Color.fromARGB(255,85,85,85)),
+                  prefixIcon: Icon(Icons.lock,color: Color.fromARGB(255, 102, 53, 23),),
                   suffixIcon: IconButton(
                     onPressed: (){
                       setState(() {
                         _passVisible=!_passVisible;
                       },);},
 
-                    icon: Icon(_passVisible? Icons.visibility_off: Icons.visibility),
+                    icon: Icon(_passVisible? Icons.visibility_off: Icons.visibility),color: Color.fromARGB(255, 102, 53, 23),
                   ),
                   border: const OutlineInputBorder(
-                    borderRadius : BorderRadius.all(Radius.circular(20.0)),
+                    borderRadius : BorderRadius.all(Radius.circular(17.0)),
+
                   ),
                 ),
               ),
@@ -110,14 +123,19 @@ class _signupState extends State<signup> {
                 controller:passwordControler,
                 decoration: InputDecoration(
                   hintText: "Confirm your pass",
-                  prefixIcon: Icon(Icons.lock),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color.fromARGB(255, 102, 53, 23),
+                      ),
+                      borderRadius: BorderRadius.circular(17)
+                  ),
+                  prefixIcon: Icon(Icons.lock,color: Color.fromARGB(255, 102, 53, 23)),
                   suffixIcon: IconButton(
                     onPressed: (){
                       setState(() {
                         _passVisible=!_passVisible;
                       },);},
 
-                    icon: Icon(_passVisible? Icons.visibility_off: Icons.visibility),
+                    icon: Icon(_passVisible? Icons.visibility_off: Icons.visibility),color: Color.fromARGB(255, 102, 53, 23),
                   ),
                   border: const OutlineInputBorder(
                     borderRadius : BorderRadius.all(Radius.circular(20.0)),
@@ -127,6 +145,7 @@ class _signupState extends State<signup> {
               SizedBox(height: 25,),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 102, 53, 23),
                     padding: EdgeInsets.symmetric(horizontal: 83,vertical: 17),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0),),
                   ),
@@ -137,17 +156,17 @@ class _signupState extends State<signup> {
                           after_login(),),);},
 
                   child: Text( "Sign Up",style: GoogleFonts.aladin(textStyle:
-                  TextStyle(fontSize: 28),)),
+                  TextStyle(fontSize: 28))),
               ),
 
               Container(
                   margin: EdgeInsets.only(left: 78,top: 17),
                   child:Row(
                     children: [
-                      Text("Already have an account? ",style: TextStyle(color: Colors.grey),),
+                      Text("Already have an account? ",style: TextStyle(color: Colors.black38),),
                       InkWell(
                         child:Text("Login",style:GoogleFonts.aladin(textStyle:
-                        TextStyle(color: Colors.blue,fontSize: 22))) ,
+                        TextStyle(fontSize: 22,color: Color.fromARGB(255, 102, 53, 23)))) ,
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>
                               login(),

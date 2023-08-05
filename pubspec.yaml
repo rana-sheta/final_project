@@ -70,6 +70,8 @@ flutter:
       - assets/lock.jpg
       - assets/shoes.png
       - assets/ground.png
+      - assets/Background.png
+      - assets/lastbacke.jpg
       - assets/logoo.png
       - assets/text.png
   #   - images/a_dot_burr.jpeg
