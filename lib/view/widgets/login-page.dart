@@ -91,12 +91,12 @@ class _loginState extends State<login> {
                   padding: EdgeInsets.only(left: 200,top: 10),
                   child: Text("Forget your password?",style: TextStyle(color: Colors.grey.shade700),),
                 ),
-                SizedBox(height: 60,),
+                SizedBox(height: 70,),
 
                 ElevatedButton(
                      style: ElevatedButton.styleFrom(
                        backgroundColor: Colors.black87,
-                        padding: EdgeInsets.symmetric(horizontal: 83,vertical: 14),
+                        padding: EdgeInsets.symmetric(horizontal: 83,vertical: 12),
                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(17.0),),
                     ),
                     onPressed: () async {
@@ -121,12 +121,15 @@ class _loginState extends State<login> {
                     TextStyle( fontSize: 28),)),
                 ),
                 SizedBox(
-                  height: 25,
+                  height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Don't have an account? ",style: TextStyle(color: Colors.grey.shade700,fontSize: 16),),
+                    SizedBox(
+                      width: 5,
+                    ),
                     InkWell(
                       child:Text("Register",style: GoogleFonts.aladin(textStyle:
                       TextStyle(color: Colors.black87,fontSize: 20))) ,
