@@ -94,26 +94,7 @@ class _AboutUsState extends State<AboutUs> {
                           ],
                         ),
 
-                        SizedBox(height: 40),
-                  ElevatedButton(
-                     style: ElevatedButton.styleFrom(
-                       backgroundColor: Color.fromARGB(255, 102, 53, 23),
-                        padding: EdgeInsets.symmetric(horizontal: 83,vertical: 14),
-                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0),),
-                    ),
-                     onPressed: () async {
-              if(_formkey.currentState!.validate()){
-
-                Navigator.push(context,
-              MaterialPageRoute(builder: (context) =>  Info(
-                //UserName: UserNamecontroller.text,
-                )),
-                );
-              }
-            },
-                     child: Text( "NEXT",style: GoogleFonts.aladin(textStyle:
-                    TextStyle( fontSize: 28, color: Colors.white,),)),
-                ),
+                        
                         
                         ],
                     ),
