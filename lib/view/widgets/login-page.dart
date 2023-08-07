@@ -132,7 +132,7 @@ class _loginState extends State<login> {
                       // }
                     },
                     child: Text( "Log in",style: GoogleFonts.aladin(textStyle:
-                    TextStyle( fontSize: 28),)),
+                    TextStyle( fontSize: 28, color: Colors.white),)),
                 ),
                 SizedBox(
                   height: 20,

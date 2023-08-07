@@ -202,7 +202,7 @@ class _signupState extends State<signup> {
                       },
 
                     child: Text( "Sign Up",style: GoogleFonts.aladin(textStyle:
-                    TextStyle(fontSize: 28))),
+                    TextStyle(fontSize: 28 , color: Colors.white))),
                 ),
                 const SizedBox(
                   height: 20,

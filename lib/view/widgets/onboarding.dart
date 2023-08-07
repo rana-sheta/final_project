@@ -23,7 +23,8 @@ class _onboarding_screenState extends State<onboarding_screen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Center(
-          child: Column(
+          child:SingleChildScrollView(
+            child: Column(
            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const SizedBox(height: 60,),
@@ -45,12 +46,14 @@ class _onboarding_screenState extends State<onboarding_screen> {
                           builder: (context) =>
                               login(),),);
                       }, child: Text( "Start",style: GoogleFonts.aladin(textStyle:
-                      TextStyle(fontSize: 28,letterSpacing: 2),),),
+                      TextStyle(fontSize: 28,letterSpacing: 2, color: Colors.white),),),
 
                         ),
             ],
           ),
-        ),
+
+          ),
+                  ),
       ),
     );
   }

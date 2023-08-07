@@ -20,9 +20,11 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        useMaterial3: true,
       // theme: ThemeData(
       // //   fontFamily: GoogleFonts.lato().fontFamily,
-      // // ),
+      ),
       home:onboarding_screen(),
       //login(),
 
