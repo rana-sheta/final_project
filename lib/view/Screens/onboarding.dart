@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:project/view/widgets/login-page.dart';
-import 'package:project/view/widgets/signup.dart';
+import 'package:project/view/Screens/login-page.dart';
+import 'package:project/view/Screens/signup.dart';
 
 class onboarding_screen extends StatefulWidget {
   const onboarding_screen({super.key});
@@ -16,7 +16,7 @@ class _onboarding_screenState extends State<onboarding_screen> {
   Widget build(BuildContext context) {
     return  Container(constraints: BoxConstraints.expand(),
       //margin: EdgeInsets.all(value),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(image: AssetImage("assets/Background.png"),fit: BoxFit.cover),
 
       ),
@@ -29,12 +29,12 @@ class _onboarding_screenState extends State<onboarding_screen> {
             children: [
               const SizedBox(height: 60,),
                   Text("PLANET",style: GoogleFonts.aladin(textStyle:
-                TextStyle(fontSize: 60,color: Colors.black,letterSpacing: 6
+                const TextStyle(fontSize: 60,color: Colors.black,letterSpacing: 6
               ),),),
                   Text("S H O E S",style: GoogleFonts.aladin(textStyle:
-               TextStyle(fontSize: 30,color: Colors.black,letterSpacing: 3,height: 1,fontWeight: FontWeight.bold
+               const TextStyle(fontSize: 30,color: Colors.black,letterSpacing: 3,height: 1,fontWeight: FontWeight.bold
               ),),),
-               SizedBox(height: 540,),
+               const SizedBox(height: 540,),
                ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 102, 53, 23),
@@ -42,11 +42,10 @@ class _onboarding_screenState extends State<onboarding_screen> {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0),),
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(
-                          builder: (context) =>
-                              login(),),);
-                      }, child: Text( "Start",style: GoogleFonts.aladin(textStyle:
-                      TextStyle(fontSize: 28,letterSpacing: 2, color: Colors.white),),),
+                        Navigator.pushNamed(context, '/signupScreen');
+                      },
+                 child: Text( "Start",style: GoogleFonts.aladin(textStyle:
+                      const TextStyle(fontSize: 28,letterSpacing: 2, color: Colors.white),),),
 
                         ),
             ],

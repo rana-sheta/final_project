@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-
+import 'package:project/view/Screens/categories_screen.dart';
+import 'package:project/view/Screens/home_screen.dart';
+import 'package:project/view/Screens/profile_screen.dart';
 
 
 class BottomNavBar extends StatefulWidget {
@@ -14,9 +16,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int currentIndex = 0;
 
   final List<Widget> screens = [
-    // HomeScreen(),
-    // CategoriesScreen(),
-    // ProfileScreen(),
+    Home(),
+    CategoriesScreen(),
+    ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {

@@ -25,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -47,30 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDww3g5_7eb5o8175bl_32yEahKiSHW9o4',
-    appId: '1:671082440332:web:8faf5c0a5450d8695e7da9',
-    messagingSenderId: '671082440332',
-    projectId: 'itiproject-e11db',
-    authDomain: 'itiproject-e11db.firebaseapp.com',
-    storageBucket: 'itiproject-e11db.appspot.com',
-    measurementId: 'G-X7FX7RGKX1',
+    apiKey: 'AIzaSyCdPpUsHS_BcS87gRuVLnO0ta44R80lUVM',
+    appId: '1:492200920618:web:51cae5b9cddbda8b336553',
+    messagingSenderId: '492200920618',
+    projectId: 'iti-training-a125a',
+    authDomain: 'iti-training-a125a.firebaseapp.com',
+    storageBucket: 'iti-training-a125a.appspot.com',
+    measurementId: 'G-2B4LPNSGTS',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAt0FGcyEm34N_DsBjD4xALEXyZ889PYG0',
-    appId: '1:671082440332:android:1779b13d657fa07b5e7da9',
-    messagingSenderId: '671082440332',
-    projectId: 'itiproject-e11db',
-    storageBucket: 'itiproject-e11db.appspot.com',
+    apiKey: 'AIzaSyBTko8NiTka7Lru3JBrx0YpeAanjtDB5rk',
+    appId: '1:492200920618:android:6b7d6d1c03bba8f5336553',
+    messagingSenderId: '492200920618',
+    projectId: 'iti-training-a125a',
+    storageBucket: 'iti-training-a125a.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCDPG3lJUs9cIbJ_CDPuV_mNpxeLOdxUGI',
-    appId: '1:671082440332:ios:945a6096d4ad339d5e7da9',
-    messagingSenderId: '671082440332',
-    projectId: 'itiproject-e11db',
-    storageBucket: 'itiproject-e11db.appspot.com',
-    iosClientId: '671082440332-to5tvl835ese21qrirv0buq3pbju6ffk.apps.googleusercontent.com',
+    apiKey: 'AIzaSyC8p-i9Wfj7ozDIJW1Q61EowRrnf_sITVg',
+    appId: '1:492200920618:ios:05c7d58ead9e514c336553',
+    messagingSenderId: '492200920618',
+    projectId: 'iti-training-a125a',
+    storageBucket: 'iti-training-a125a.appspot.com',
+    iosClientId: '492200920618-4vi9tp175t6dloegh327s5gg868btcg7.apps.googleusercontent.com',
     iosBundleId: 'com.example.project',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyC8p-i9Wfj7ozDIJW1Q61EowRrnf_sITVg',
+    appId: '1:492200920618:ios:538198dcb8cf00bf336553',
+    messagingSenderId: '492200920618',
+    projectId: 'iti-training-a125a',
+    storageBucket: 'iti-training-a125a.appspot.com',
+    iosClientId: '492200920618-lsen49jc9o44ol222hunu0pn3f7q9h0o.apps.googleusercontent.com',
+    iosBundleId: 'com.example.project.RunnerTests',
   );
 }

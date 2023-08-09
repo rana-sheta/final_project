@@ -1,14 +1,8 @@
-
-
-import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:project/view/widgets/signup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'after_login.dart';
 
 class login extends StatefulWidget {
   const login({super.key});
@@ -118,12 +112,9 @@ class _loginState extends State<login> {
                       // if(formKey.currentState!.validate()){
                         bool result=await firebaseLogin(emailControler.text, passwordControler.text);
                         if(result) {
-                          // final SharedPreferences prefs = await SharedPreferences
-                          //     .getInstance();
-                          // await prefs.setString('email', emailControler.text);
-                          Navigator.push(context, MaterialPageRoute(
-                            builder: (context) =>
-                                after_login(),),);
+                          final SharedPreferences prefs = await SharedPreferences.getInstance();
+                          await prefs.setString('email', emailControler.text);
+                          Navigator.pushNamed(context, '/bottomNavBar');
                         }
                         else{
                           ScaffoldMessenger.of(context).showSnackBar(
@@ -149,10 +140,7 @@ class _loginState extends State<login> {
                       Text("Register",style: GoogleFonts.aladin(textStyle:
                       TextStyle(color: Color.fromARGB(255, 102, 53, 23),fontSize: 20,fontWeight: FontWeight.bold))) ,
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                            signup(),
-                        ),
-                        );
+                        Navigator.pushNamed(context, '/signupScreen');
                       },
                     )
                   ],

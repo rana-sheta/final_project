@@ -44,6 +44,7 @@ dependencies:
   google_fonts: ^5.1.0
   regexpattern: ^2.5.0
   google_nav_bar: ^5.0.6
+  cloud_firestore: ^4.8.4
 
 dev_dependencies:
   flutter_test:
@@ -69,15 +70,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-      - assets/lock.jpg
-      - assets/shoes.png
       - assets/ground.png
       - assets/Background.png
-      - assets/lastbacke.jpg
       - assets/logoo.png
-      - assets/text.png
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+      - assets/profile.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

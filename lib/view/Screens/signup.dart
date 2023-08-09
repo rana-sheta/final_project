@@ -2,10 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:project/view/widgets/login-page.dart';
 import 'package:regexpattern/regexpattern.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'after_login.dart';
 
 class signup extends StatefulWidget {
   const signup({super.key});
@@ -47,41 +46,15 @@ class _signupState extends State<signup> {
                 ),
 
                 SizedBox(height: 20,),
-                Text("Let's Create Yours",style: GoogleFonts.aladin(textStyle:TextStyle(fontSize: 45),color: Colors.black ),
+                Text("Let's Create Yours",
+                  style: GoogleFonts.aladin(textStyle:TextStyle(fontSize: 45),color: Colors.black ),
                   //
                 ),
                 // SizedBox(height: 1,),
-                Text("Enter Your Personal Information",style: GoogleFonts.aladin(textStyle:TextStyle(color: Colors.grey.shade700,fontSize: 18), ),
+                Text("Enter Your Personal Information",
+                  style: GoogleFonts.aladin(textStyle:TextStyle(color: Colors.grey.shade700,fontSize: 18), ),
                 ) ,
-                SizedBox(height: 30,),
-                TextFormField(
-                  validator: (value){
-                    bool isMatch = value!.isUsername();
-                    if ( isMatch ){
-                      return null;
-                    }
-                    else{
-                      return 'please enter correct username';
-                    }
-                  },
-                  decoration:  InputDecoration(
-                    labelText:"User Name",
-                    labelStyle: TextStyle(color: Color.fromARGB(255,85,85,85)),
-                    hintText: "Full name",
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color.fromARGB(255, 102, 53, 23),
-                        ),
-                        borderRadius: BorderRadius.circular(17)
-                    ),
-                    prefixIcon: Icon(Icons.person,color: Color.fromARGB(255, 102, 53, 23)),
-                    border: OutlineInputBorder(
-                        borderRadius : BorderRadius.all(Radius.circular(20.0)),
-
-                    ),
-                  ),
-
-                ),
-                SizedBox(height: 15,),
+                SizedBox(height: 45,),
                 TextFormField(
                   validator: (value){
                     bool isMatch = value!.isEmail();
@@ -177,11 +150,11 @@ class _signupState extends State<signup> {
                       icon: Icon(_passVisible? Icons.visibility_off: Icons.visibility),color: Color.fromARGB(255, 102, 53, 23),
                     ),
                     border: const OutlineInputBorder(
-                      borderRadius : BorderRadius.all(Radius.circular(20.0)),
+                      borderRadius : BorderRadius.all(Radius.circular(17.0)),
                     ),
                   ),
                 ),
-                const SizedBox(height: 50,),
+                const SizedBox(height: 80,),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 102, 53, 23),
@@ -191,13 +164,13 @@ class _signupState extends State<signup> {
                     onPressed: () async {
                       if (formKey.currentState!.validate()) {
                         firebaseSignUp(emailControler.text, passwordControler.text);
-                        Navigator.push(context, MaterialPageRoute(
-                          builder: (context) =>
-                              after_login(),),);
+                        final SharedPreferences prefs = await SharedPreferences.getInstance();
+                        await prefs.setString('email', emailControler.text);
+                        Navigator.pushNamed(context, '/bottomNavBar');
                       }
                       else{
                         ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Signed Up Failed')));
+                            const SnackBar(content: Text('Sign Up Failed')));
                       }
                       },
 
@@ -219,10 +192,7 @@ class _signupState extends State<signup> {
                       child:Text("Login",style:GoogleFonts.aladin(textStyle:
                       TextStyle(fontSize: 22,color: Color.fromARGB(255, 102, 53, 23),fontWeight: FontWeight.bold))) ,
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                            login(),
-                        ),
-                        );
+                        Navigator.pushNamed(context, '/loginScreen');
                       },
                     )
                   ],
