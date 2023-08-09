@@ -5,9 +5,14 @@ import 'package:project/view/cubit/products_cubit.dart';
 import 'package:project/view/cubit/products_state.dart';
 import '../../models/products_model.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -104,48 +109,58 @@ class Home extends StatelessWidget {
       ),
     );
   }
-  Widget buildItem(ProductModel model) => Padding(
-    padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 5),
-    child: Container(
-      clipBehavior: Clip.hardEdge,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(14),
-        color: Color.fromARGB(255, 250, 240, 230),
-      ),
-      child: Column(
-        children: [
-          Container(
-            height: 160,
-            width: 160,
-            decoration:
-            BoxDecoration(borderRadius: BorderRadius.circular(20)),
-            child: Column(
-              children: [
-                SizedBox(height: 30,),
-                Image.network(
-                  "${model.image}",
-                  fit: BoxFit.cover,
-                ),
-              ],
+
+  Widget buildItem(ProductModel model) => InkWell(
+    onTap: (){
+    },
+    child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 5),
+      child: Container(
+        clipBehavior: Clip.hardEdge,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(14),
+          color: Color.fromARGB(255, 250, 240, 230),
+        ),
+        child: Column(
+          children: [
+            Container(
+              height: 160,
+              width: 170,
+              decoration:
+              BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              child: Column(
+                children: [
+                  Container(height: 39,
+                      alignment: AlignmentDirectional.topEnd,
+                      child: IconButton(onPressed: (){
+                      }, icon: Icon(
+                        Icons.favorite_outline
+                      ),)),
+                  Image.network(
+                    "${model.image}",
+                    fit: BoxFit.cover,
+                  ),
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 45,
-              alignment: AlignmentDirectional.bottomStart,
-              child: Text(
-                "${model.name}\nPrice: ${model.price} ",
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 45,
+                alignment: AlignmentDirectional.bottomStart,
+                child: Text(
+                  "${model.name}\nPrice: ${model.price} ",
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
                 ),
               ),
             ),
-          ),
 
-        ],
+          ],
+        ),
       ),
     ),
   );

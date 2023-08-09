@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project/view/widgets/profile_menu.dart';
@@ -116,7 +117,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 icon: Icons.logout_outlined,
                 textColor: Colors.red,
                 endIcon: false,
-                onPress: () {},
+                onPress: () async {
+                  await FirebaseAuth.instance.signOut();
+                  Navigator.pushNamed(context, '/loginScreen');
+                },
               )
             ],
           ),

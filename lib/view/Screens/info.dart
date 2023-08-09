@@ -30,25 +30,25 @@ class _InfoState extends State<Info> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
              children: [
-                  Text("TEAM MEMBERS:", style: GoogleFonts.aladin(textStyle: 
-                                        TextStyle(fontSize: 36 , fontWeight: FontWeight.w500 ,color:Color.fromARGB(207, 102, 53, 23) ,letterSpacing: 6
+                  Text("TEAM MEMBERS:", style: GoogleFonts.aladin(textStyle:
+                                        TextStyle(fontSize: 36 , fontWeight: FontWeight.w500 ,color:Color.fromARGB(207, 102, 53, 23) ,letterSpacing: 4
                                         ),),),
-                  Text("RANA AHMED", style: GoogleFonts.caladea(textStyle: 
+                  Text("RANA AHMED", style: GoogleFonts.caladea(textStyle:
                                         TextStyle(fontSize: 28 , fontWeight: FontWeight.w300 ,color:Colors.black,letterSpacing: 2
                                         ),),),
-                  Text("ALAA KHAIRY", style: GoogleFonts.caladea(textStyle: 
+                  Text("ALAA KHAIRY", style: GoogleFonts.caladea(textStyle:
                                         TextStyle(fontSize: 28 , fontWeight: FontWeight.w300 ,color:Colors.black ,letterSpacing: 2
                                         ),),),
-                 Text("YOMNA ASHRAF", style: GoogleFonts.caladea(textStyle: 
+                 Text("YOMNA ASHRAF", style: GoogleFonts.caladea(textStyle:
                                         TextStyle(fontSize: 28 , fontWeight: FontWeight.w300 ,color:Colors.black ,letterSpacing: 2
                                         ),),),
-                  Text("YASMINE MAGDY", style: GoogleFonts.caladea(textStyle: 
+                  Text("YASMINE MAGDY", style: GoogleFonts.caladea(textStyle:
                                         TextStyle(fontSize: 28 , fontWeight: FontWeight.w300 ,color:Colors.black ,letterSpacing: 2
                                         ),),),
-                  Text("HALA ABDELRAHMAN", style: GoogleFonts.caladea(textStyle: 
+                  Text("HALA ABDELRAHMAN", style: GoogleFonts.caladea(textStyle:
                                         TextStyle(fontSize: 28 , fontWeight: FontWeight.w300 ,color:Colors.black ,letterSpacing: 2
                                         ),),),
-              
+
             ],
           ),
         ),

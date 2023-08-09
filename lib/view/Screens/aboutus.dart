@@ -19,7 +19,7 @@ class _AboutUsState extends State<AboutUs> {
           Navigator.of(context).pop();
         },),
           title: Text("ABOUT US" , style: GoogleFonts.aladin(textStyle:
-                TextStyle(fontSize: 32,color: Color.fromARGB(207, 102, 53, 23),letterSpacing: 6
+                TextStyle(fontSize: 32,color: Colors.black,letterSpacing: 2
                 ),),),
                 centerTitle: true,
         ),
@@ -50,12 +50,12 @@ class _AboutUsState extends State<AboutUs> {
                                     ),),),
 
                       Text("33 COUNTRIES", style: GoogleFonts.caladea(textStyle:
-                                    TextStyle(fontSize: 28 , fontWeight: FontWeight.w400 ,color:Colors.black ,letterSpacing: 3
+                                    TextStyle(fontSize: 26 , fontWeight: FontWeight.w400 ,color:Colors.black ,letterSpacing: 3
                                     ),),),
 
 
                       Text("& 300 STORE",style: GoogleFonts.caladea(textStyle:
-                                    TextStyle(fontSize: 28 , fontWeight: FontWeight.w400 ,color:Colors.black,letterSpacing: 3
+                                    TextStyle(fontSize: 26 , fontWeight: FontWeight.w400 ,color:Colors.black,letterSpacing: 3
                                     ),),),
 
                     ],
