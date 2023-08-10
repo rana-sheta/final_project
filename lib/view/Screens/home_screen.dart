@@ -30,10 +30,10 @@ class _HomeState extends State<Home> {
                 backgroundColor: Colors.white,
                 leading: Icon(Icons.menu,color: Colors.black,),
                 actions: const [
-                  Icon(Icons.favorite_outlined,color: Colors.black,),
-                  SizedBox(width: 8,),
-                  Icon(Icons.shopping_cart_rounded,color: Colors.black,),
-                  SizedBox(width: 10,)
+                  Icon(Icons.favorite,color: Colors.black,),
+                  SizedBox(width: 12,),
+                  Icon(Icons.shopping_cart_outlined,color: Colors.black,),
+                  SizedBox(width: 15,)
                 ],
               ),
               drawer:Drawer(),
@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
                       height: 550,
                       child: GridView.builder(
                           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2, childAspectRatio: 0.80),
+                              crossAxisCount: 2, childAspectRatio: 0.69),
                           //itemBuilder: (context, index)=> SizedBox(height: 20),
                           itemBuilder: (context, index) => buildItem(
                             context.read<ProductCubit>().products[index],),
@@ -110,58 +110,75 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget buildItem(ProductModel model) => InkWell(
-    onTap: (){
-    },
-    child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 5),
-      child: Container(
-        clipBehavior: Clip.hardEdge,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
-          color: Color.fromARGB(255, 250, 240, 230),
-        ),
-        child: Column(
-          children: [
-            Container(
-              height: 160,
-              width: 170,
-              decoration:
-              BoxDecoration(borderRadius: BorderRadius.circular(20)),
+  Widget buildItem(ProductModel model) => Container(
+    child: Column(
+      children: [
+        InkWell(
+          onTap: (){
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 5),
+            child: Container(
+              clipBehavior: Clip.hardEdge,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14),
+                color: Color.fromARGB(255, 250, 240, 230),
+              ),
               child: Column(
                 children: [
-                  Container(height: 39,
-                      alignment: AlignmentDirectional.topEnd,
-                      child: IconButton(onPressed: (){
-                      }, icon: Icon(
-                        Icons.favorite_outline
-                      ),)),
-                  Image.network(
-                    "${model.image}",
-                    fit: BoxFit.cover,
+                  Container(
+                    height: 160,
+                    width: 170,
+                    decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      children: [
+                        Container(height: 39,
+                            alignment: AlignmentDirectional.topEnd,
+                            child: IconButton(onPressed: (){
+                            }, icon: Icon(
+                              Icons.favorite_outline
+                            ),)),
+                        Image.network(
+                          "${model.image}",
+                          fit: BoxFit.cover,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 45,
+                      alignment: AlignmentDirectional.bottomStart,
+                      child: Text(
+                        "${model.name}\nPrice: ${model.price} ",
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 45,
-                alignment: AlignmentDirectional.bottomStart,
-                child: Text(
-                  "${model.name}\nPrice: ${model.price} ",
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-            ),
-
-          ],
+          ),
         ),
-      ),
+        OutlinedButton(
+          style: OutlinedButton.styleFrom(
+            side: BorderSide(color:Color.fromARGB(255, 102, 53, 23) ),
+            padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 5),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.0)),
+          ),
+          onPressed: (){},
+          child: Text( "Add to cart",style:
+          TextStyle(fontSize: 16 , color: Color.fromARGB(255, 102, 53, 23))
+          )
+        ),
+       // ),
+      ],
     ),
   );
 }
